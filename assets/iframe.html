@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!--   See Using Zendesk Garden:
+    https://developer.zendesk.com/apps/docs/developer-guide/setup#using-zendesk-garden
+    https://garden.zendesk.com/css-components/bedrock/
+    https://garden.zendesk.com/css-components/utilities/typography/
+   -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/combine/npm/@zendeskgarden/css-bedrock@7.0.21,npm/@zendeskgarden/css-utilities@4.3.0">
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="grid">
+      <label for="label_url">Instancia: </label>
+      <input type="text" name="url_inst" id="url_inst">
+
+      <label for="label_objeto">Objecto: </label>
+      <select name="objeto" id="objeto">
+        <option value="macros">Macros</option>
+        <option value="automations">Automatización</option>
+      </select>
+
+
+      <label for="label_url">Subir Archivo: </label>
+      <input type="file" name="archivo" id="archivo">
+
+      <button type="button" onclick="crear()" id="btnCrear" disabled>Crear</button>
+
+      <span id="msg" hidden></span>
+
+    </div>
+  </div>
+  <script src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
+  <script>
+    // Initialise Apps framework client. See also:
+    // https://developer.zendesk.com/apps/docs/developer-guide/getting_started
+    var client = ZAFClient.init();
+    client.invoke('resize', { width: '100%', height: document.body.offsetHeight + 20 });
+  </script>
+  <script src="./scripts/script.js"></script>
+</body>
+
+</html>

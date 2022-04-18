@@ -1,0 +1,12 @@
+
+.container,.grid,.btn{
+    flex-direction: column;
+    padding: 5px;
+}
+
+.grid input{
+    font-size: small;
+}
+.grid button{
+    margin-top: 10px;
+}
